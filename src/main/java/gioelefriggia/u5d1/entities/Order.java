@@ -1,5 +1,7 @@
 package gioelefriggia.u5d1.entities;
 
+import gioelefriggia.u5d1.entities.MenuItem;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,5 +68,13 @@ public class Order {
 
     public String getTableStatus() {
         return tableStatus;
+    }
+
+    public int calculateTotalCalories() {
+        int totalCalories = 0;
+        for (MenuItem item : items) {
+            totalCalories += item.getCalories();
+        }
+        return totalCalories;
     }
 }
